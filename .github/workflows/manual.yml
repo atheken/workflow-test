@@ -13,4 +13,5 @@ jobs:
     - name: Build the project
       run: |
         printenv
+        dotnet restore
         msbuild
