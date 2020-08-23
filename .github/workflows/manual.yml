@@ -12,5 +12,5 @@ jobs:
       uses: actions/checkout@v2
     - name: Show .net version
       run: dotnet --version
-    - name: Show repo dir:
+    - name: Show repo dir
       run: ls -alh /data/
