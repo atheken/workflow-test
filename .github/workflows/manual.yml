@@ -5,12 +5,10 @@ jobs:
     runs-on: ubuntu-18.04
     container:
       image: wildbit/dotnet-builder
-      volumes:
-      - "$GITHUB_WORKSPACE:/data/"
     steps:
     - name: Checkout repo
       uses: actions/checkout@v2
     - name: Show .net version
       run: dotnet --version
     - name: Show repo dir
-      run: ls -alh /data/
+      run: 'pwd ; ls -alh ./'
