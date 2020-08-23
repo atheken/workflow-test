@@ -1,23 +1,16 @@
-# This is a basic workflow that is manually triggered
-
 name: Build on push
-
-# Controls when the action will run. Workflow runs when manually triggered using the UI
-# or API.
 on: push
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "greet"
   build:
     runs-on: ubuntu-18.04
     container:
       image: wildbit/dotnet-builder
-    # Steps represent a sequence of tasks that will be executed as part of the job
+      volumes:
+      - "${GITHUB_WORKSPACE}:/data/"
     steps:
     - name: Checkout repo
       uses: actions/checkout@v2
     - name: Show .net version
       run: dotnet --version
-    - name: Show repo dir.
-      run: echo ${GITHUB_WORKSPACE}
+    - name: Show repo dir:
+      run: ls -alh /data/
