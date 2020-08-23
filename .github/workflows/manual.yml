@@ -10,5 +10,5 @@ jobs:
       uses: actions/checkout@v2
     - name: Show .net version
       run: dotnet --version
-    - name: Show repo dir
-      run: 'pwd ; ls -alh ./'
+    - name: Build the project
+      run: msbuild
