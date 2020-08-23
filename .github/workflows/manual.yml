@@ -11,4 +11,6 @@ jobs:
     - name: Show .net version
       run: dotnet --version
     - name: Build the project
-      run: msbuild
+      run: |
+        printenv
+        msbuild
