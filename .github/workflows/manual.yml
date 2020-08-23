@@ -6,7 +6,7 @@ jobs:
     container:
       image: wildbit/dotnet-builder
       volumes:
-      - "${GITHUB_WORKSPACE}:/data/"
+      - "$GITHUB_WORKSPACE:/data/"
     steps:
     - name: Checkout repo
       uses: actions/checkout@v2
